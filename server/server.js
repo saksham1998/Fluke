@@ -12,13 +12,19 @@ var io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection',(socket)=>{
+  console.log('Connection is Made successfully!!');
+
   socket.on('createMessage',(message)=>{
-    console.log(message);
+    console.log('message :' ,message);
+    io.emit('newMessage',{
+      name:message.name,
+      data:message.data,
+      createdAt:new Date()
+    })
   })
 
-  socket.emit('newMessage',{
-    name:'soham',
-    data:'Yes it is :)'
+  socket.on('disconnect',()=>{
+    console.log('Server is disconnected');
   })
 })
 
