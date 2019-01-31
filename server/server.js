@@ -12,8 +12,16 @@ var io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection',(socket)=>{
+  socket.on('createMessage',(message)=>{
+    console.log(message);
+  })
+
+  socket.emit('newMessage',{
+    name:'soham',
+    data:'Yes it is :)'
+  })
 })
 
 server.listen(port,()=>{
-  console.log("server is up and running!")
-})
+  console.log('Server is up and running!');
+});
