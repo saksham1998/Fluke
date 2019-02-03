@@ -12,3 +12,7 @@ socket.on('connect',()=>{
 socket.on('newMessage',(data)=>{
   console.log(data);
 })
+
+socket.on('disconnect',()=>{
+  console.log('User is Disconnected');
+})
