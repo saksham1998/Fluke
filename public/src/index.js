@@ -4,7 +4,7 @@ socket.on('connect',()=>{
   console.log('Connected to the server');
 
   socket.emit('createMessage',{
-    name:'john',
+    from:'john',
     data:'have a pleasent eve'
   })
 })
