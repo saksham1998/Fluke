@@ -14,8 +14,17 @@ app.use(express.static(publicPath));
 io.on('connection',(socket)=>{
   console.log('Connection is Made successfully!!');
 
+  socket.emit('newMessage',{
+    name:'Admin',
+    data:'Welocome to the chat room!'
+  })
+  socket.broadcast.emit('newMessage',{
+    name:'Admin',
+    data:'New User Joint!!!',
+    createdAt:new Date()
+  })
+
   socket.on('createMessage',(message)=>{
-    console.log('message :' ,message);
     io.emit('newMessage',{
       name:message.name,
       data:message.data,
