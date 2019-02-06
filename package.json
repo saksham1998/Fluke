@@ -1,7 +1,7 @@
 {
-  "name": "node-chat-app",
+  "name": "fluke",
   "version": "1.0.0",
-  "description": "real time chat app",
+  "description": "real time chat app!!",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
