@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Fluke</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <h1>This is a chat app</h1>
     <ol id="messages"></ol>
 
   <form id="message-form">
-    <input name="message" type="text" placeholder="Message"/>
+    <input name="message" type="text" placeholder="Message" class='message'/>
     <button>Send</button>
   </form>
 
     <script src = "/socket.io/socket.io.js"></script>
-    <script src="/js/libs/jquery-3.1.0.min.js"></script>
+    <!-- <script src="/js/libs/jquery-3.1.0.min.js"></script> -->
     <script src = "/src/index.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
-var generateMessage = (from,data)=>{
+var generateMessage = (from,text)=>{
   return {
     from,
-    data,
+    text,
     createdAt:new Date()
   }
 }

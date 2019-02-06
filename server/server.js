@@ -20,7 +20,7 @@ io.on('connection',(socket)=>{
   socket.broadcast.emit('newMessage',generateMessage('Admin','New User Connected'));
 
   socket.on('createMessage',(message)=>{
-    io.emit('newMessage',generateMessage(message.from,message.data))
+    io.emit('newMessage',generateMessage(message.from,message.text))
   });
 
   socket.on('disconnect',()=>{
