@@ -10,20 +10,18 @@
   <body class="chat">
     <div class="chat__sidebar">
       <h2>Members</h2>
-      <div id="users">
-
-      </div>
-      <div class="chat__main">
-
-      </div>
+      <div id="users"></div>
     </div>
-    <ol id="messages"></ol>
 
-  <form id="message-form">
-    <input name="message" type="text" placeholder="Message" class='message'/>
-    <button>Send</button>
-  </form>
-  <button id="send-location">Send Location</button>
+    <div class="chat__main">
+      <ol id="messages"></ol>
+
+      <form id="message-form">
+        <input name="message" type="text" placeholder="Message" class='message'/>
+        <button>Send</button>
+      </form>
+      <button id="send-location">Send Location</button>
+    </div>
 
     <script src = "/socket.io/socket.io.js"></script>
     <script src = "/src/index.js"></script>
