@@ -14,13 +14,15 @@
     </div>
 
     <div class="chat__main">
-      <ol id="messages"></ol>
+      <ol id="messages" class="chat__message"></ol>
 
-      <form id="message-form">
-        <input name="message" type="text" placeholder="Message" class='message'/>
-        <button>Send</button>
-      </form>
-      <button id="send-location">Send Location</button>
+      <div class="chat__footer">
+        <form id="message-form">
+          <input name="message" type="text" placeholder="Message" class='message'/>
+          <button>Send</button>
+        </form>
+        <button id="send-location">Send Location</button>
+      </div>
     </div>
 
     <script src = "/socket.io/socket.io.js"></script>
