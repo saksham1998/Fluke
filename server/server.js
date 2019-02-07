@@ -19,8 +19,9 @@ io.on('connection',(socket)=>{
   socket.emit('newMessage',generateMessage('Admin','Welocme To the Chat Room'));
   socket.broadcast.emit('newMessage',generateMessage('Admin','New User Connected'));
 
-  socket.on('createMessage',(message)=>{
-    io.emit('newMessage',generateMessage(message.from,message.text))
+  socket.on('createMessage',(message,callback)=>{
+    io.emit('newMessage',generateMessage(message.from,message.text));
+    callback();
   });
 
   socket.on('createLocationMessage', (coords) => {

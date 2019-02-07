@@ -34,8 +34,9 @@ $('#message-form').on('submit', function (e) {
 
 socket.emit('createMessage', {
     from: 'User',
-    text: $(".message-input").val()
+    text: $("[name=message]").val()
   }, function () {
+    $("[name=message]").val('')
   });
 });
 
