@@ -5,20 +5,21 @@
     <title>Fluke</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <link rel="icon" href="/styles/favicon.jpg">
+      <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
       <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body class="chat">
     <div class="chat__sidebar">
-      <h2>Members</h2>
+      <h3>Members</h3>
       <div id="users"></div>
     </div>
 
     <div class="chat__main">
-      <ol id="messages" class="chat__message"></ol>
+      <ol id="messages" class="chat__messages"></ol>
 
       <div class="chat__footer">
         <form id="message-form">
-          <input name="message" type="text" placeholder="Message" class='message'/>
+          <input name="message" type="text" placeholder="Message" class='message-input'/>
           <button>Send</button>
         </form>
         <button id="send-location">Send Location</button>

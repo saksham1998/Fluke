@@ -34,7 +34,7 @@ $('#message-form').on('submit', function (e) {
 
 socket.emit('createMessage', {
     from: 'User',
-    text: $(".message").val()
+    text: $(".message-input").val()
   }, function () {
   });
 });
