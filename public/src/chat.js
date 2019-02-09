@@ -2,6 +2,16 @@ var socket = io();
 
 socket.on('connect',()=>{
   console.log('Connected to the server');
+  var params = jQuery.deparam(window.location.search);
+  
+socket.emit('join', params, function (err) {
+  if (err) {
+    alert(err);
+    window.location.href = '/';
+  } else {
+    console.log('No error');
+  }
+  });
 })
 
 socket.on('disconnect',()=>{
@@ -52,7 +62,7 @@ $('#message-form').on('submit', function (e) {
   e.preventDefault();
 
 socket.emit('createMessage', {
-    from: 'User',
+    from:'User',
     text: $("[name=message]").val()
   }, function () {
     $("[name=message]").val('')
