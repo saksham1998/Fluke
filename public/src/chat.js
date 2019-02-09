@@ -1,10 +1,12 @@
 var socket = io();
+var name;
+var members = [];
 
 socket.on('connect',()=>{
   console.log('Connected to the server');
   var params = jQuery.deparam(window.location.search);
-  
-socket.emit('join', params, function (err) {
+  name = params.name;
+  socket.emit('join', params, function (err) {
   if (err) {
     alert(err);
     window.location.href = '/';
@@ -62,7 +64,7 @@ $('#message-form').on('submit', function (e) {
   e.preventDefault();
 
 socket.emit('createMessage', {
-    from:'User',
+    from:name,
     text: $("[name=message]").val()
   }, function () {
     $("[name=message]").val('')
