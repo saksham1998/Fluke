@@ -180,7 +180,7 @@ button:disabled {
   font-family: Roboto;
 }
 
-@media (max-width: 600px) {
+@media all and (max-width: 600px) {
   * {
     font-size: 1rem;
   }
