@@ -8,23 +8,44 @@ socket.on('disconnect',()=>{
   console.log('User is Disconnected');
 })
 
+function scrollToBottom() {
+  var messages = $('#messages');
+  var newMessage = messages.children('li:last-child');
+  var clientHeight = messages.prop('clientHeight');
+  var scrollTop = messages.prop('scrollTop');
+  var scrollHeight = messages.prop('scrollHeight');
+  var newMessageHeight = newMessage.innerHeight();
+  var lastMessageHeight = newMessage.prev().innerHeight();
+
+  if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
+    messages.scrollTop(scrollHeight);
+  }
+}
+
 socket.on('newLocationMessage', function (message) {
   var time = moment(message.createdAt).format("h:mm a");
-  var li = $('<li></li>');
-  var a = $('<a target="_blank">My current location</a>');
+  var template = $('#location-message-template').html();
+    var html = Mustache.render(template, {
+      from: message.from,
+      url: message.url,
+      createdAt: time
+    });
 
-  li.text(`${message.from} ${time}: `);
-  a.attr('href', message.url);
-  li.append(a);
-  $('#messages').append(li);
+    $('#messages').append(html);
+    scrollToBottom();
 });
 
 socket.on('newMessage', function (message) {
-var time = moment(message.createdAt).format("h:mm a");
-  var li = $('<li></li>');
-  li.text(`${message.from} ${time}: ${message.text}`);
+  var time = moment(message.createdAt).format("h:mm a");
+  var template = $('#message-template').html();
+  var html = Mustache.render(template, {
+    text: message.text,
+    from: message.from,
+    createdAt: time
+  });
 
-  $('#messages').append(li);
+  $('#messages').append(html);
+  scrollToBottom();
 });
 
 $('#message-form').on('submit', function (e) {
