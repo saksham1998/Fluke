@@ -166,12 +166,18 @@ button:disabled {
 }
 
 .message__title h4 {
-  font-weight: 600;
+  font-weight: bolder;
+  font-size:130%;
   margin-right: 10px;
 }
 
 .message__title span {
   color: #999;
+}
+
+.message__body {
+  font-weight: bolder;
+  font-family: Roboto;
 }
 
 @media (max-width: 600px) {
