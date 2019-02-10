@@ -1,6 +1,5 @@
 var socket = io();
 var name;
-var members = [];
 
 socket.on('connect',()=>{
   console.log('Connected to the server');
@@ -18,7 +17,17 @@ socket.on('connect',()=>{
 
 socket.on('disconnect',()=>{
   console.log('User is Disconnected');
-})
+});
+
+socket.on('updateUserList', function (users) {
+  var ol = $('<ol></ol>');
+
+  users.forEach(function (user) {
+    ol.append($('<li></li>').text(user));
+  });
+
+  $('#users').html(ol);
+});
 
 function scrollToBottom() {
   var messages = $('#messages');
@@ -81,6 +90,7 @@ locationButton.on('click', function () {
   navigator.geolocation.getCurrentPosition(function (position) {
     locationButton.removeAttr('disabled').text('Send Location');
     socket.emit('createLocationMessage', {
+      from:name,
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
     });

@@ -7,21 +7,22 @@
   <meta lang="en-US">
   <link rel="stylesheet" href="/styles/style.css">
   <link rel="icon" href="/styles/favicon.png">
+  </style>
 </head>
 
 <body class="centered-form">
   <div class="centered-form__form">
     <form action="/chat.html">
       <div class="form-field">
-        <h3>Fluke<h3>
+        <h3>Sign Up/Log In<h3>
       </div>
       <div class="form-field">
-        <label>Display name</label>
-        <input type="text" name="name" autofocus/>
+        <label>Name:</label>
+        <input type="text" name="name" required autofocus/>
       </div>
       <div class="form-field">
-        <label>Room name</label>
-        <input type="text" name="room"/>
+        <label>Group Name:</label>
+        <input type="text" name="room" required />
       </div>
       <div class="form-field">
         <button>Join</button>
@@ -29,5 +30,4 @@
     </form>
   </div>
 </body>
-
 </html>
