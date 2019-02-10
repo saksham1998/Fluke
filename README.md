@@ -30,7 +30,7 @@ other. Chat page mainly contains three parts , i.e list of members,previous mess
                           
      https://jquery.com/ 
  3. **Express JS**:Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
-                            
+ 
      https://expressjs.com/
  4. **Moustache JS**:Minimal templating with {{mustaches}} in JavaScript
                             
@@ -38,5 +38,16 @@ other. Chat page mainly contains three parts , i.e list of members,previous mess
  4. **Moment JS**:Parse, validate, manipulate, and display dates in javascript. 
                             
      http://momentjs.com       
-        
+  
+ # License:
+ GNU General Public License v3.0
+ https://github.com/saksham1998/Fluke/blob/master/LICENSE
+ 
+ # Queries And Suggestions:
+ Any queries,suggestions and problems are very important for the advancement of the app,for that please mail me at      
+ sakshammanocha14@gmail.com. Please feel free to post any problems you are facing.....
+ 
+ 
+ Thank You,**Saksham**:)
+       
         
